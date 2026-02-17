@@ -22,14 +22,138 @@ En este repositorio encontrarás un ejercicio práctico para aprender y practica
 
 ## 🚀 Instrucciones
 
-1. Cambia a la rama `main` para realizar el ejercicio sin resolver.
-
-   ```bash
-   git checkout main
-   ```
-
+1. Quédate en la rama `main` para realizar el ejercicio sin resolver.
 2.	Abre el archivo index.html en tu navegador para visualizar la estructura inicial.
-3.	Explora y modifica el archivo style.css para observar cómo funcionan las propiedades de Grid.
+3.	Crea un archivo `style.css` y vincúlalo con el html y ve agregando una por una las secciones del CSS para observar cómo funcionan las propiedades de Flex y Grid.
+```
+/* CÓDIGO CSS */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #e9ecf4;
+  color: #000;
+  font-family: "Roboto", sans-serif;
+}
+
+.contenedor {
+  max-width: 1000px;
+  margin: 20px auto;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, auto);
+  grid-template-areas:
+    "nav nav nav"
+    "contenido contenido sidebar"
+    "bloque1 bloque1 bloque2 "
+    "footer footer footer";
+}
+
+.contenido {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+    grid-area: contenido;
+}
+
+nav {
+  background: #ec9006;
+  color: #fff;
+  grid-area: nav;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background: #67db9e;
+  display: flex;
+  flex-direction: column;
+  justify-content: top; 
+  align-items: center; 
+  padding: 20px;
+  border-radius: 12px; 
+}
+
+.bloque {
+  color: #ffff;
+  text-align: left;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+#bloque1 {
+  grid-area: bloque1;
+  background: #55a8fd;
+}
+
+#bloque2 {
+  grid-area: bloque2;
+  background: #1f6ab6;
+}
+
+footer {
+  background: #4a4d50;
+  color: #fff;
+  grid-area: footer;
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+  .contenedor {
+    grid-template-areas:
+      "nav nav nav"
+      "contenido contenido contenido"
+      "sidebar sidebar sidebar"
+      "bloque1 bloque1 bloque1"
+      "bloque2 bloque2 bloque2"
+      "footer footer footer";
+  }
+}
+```
+   
 4.	Si necesitas ayuda o quieres comparar tu solución, cambia a la rama solution:
    ```git checkout solution```
-5. Agrega el script para que veas la magia de javascript!
+  	
+6. EXTRA: Agrega el script para que veas la magia de javascript!
+   (Puedes agregarlo antes de cerrar la etiqueta de </body>
+```
+<script>
+console.log("Hola mundito!");
+
+const btn = document.querySelector("#cambiar-color"); // Selecciona por id
+
+function random(number) {
+  return Math.floor(Math.random() * (number + 1));
+}
+
+function changeBackground() {
+  const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+  document.body.style.backgroundColor = rndCol;
+}
+
+btn.addEventListener("click", changeBackground);
+
+document.addEventListener("DOMContentLoaded", function () {
+  const boton = document.querySelector(".button-toggle");
+  const menuLinks = document.querySelector(".menu");
+
+  boton.addEventListener("click", function () {
+    menuLinks.classList.toggle("open");
+  });
+});
+</script>
+``` 

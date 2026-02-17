@@ -129,7 +129,7 @@ footer {
    ```git checkout solution```
   	
 6. EXTRA: Agrega el script para que veas la magia de javascript!
-   (Puedes agregarlo antes de cerrar la etiqueta de </body>
+   (Puedes agregarlo antes de cerrar la etiqueta de `</body>`)
 ```
 <script>
 console.log("Hola mundito!");

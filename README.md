@@ -28,11 +28,8 @@ En este repositorio encontrarás un ejercicio práctico para aprender y practica
    git checkout main
    ```
 
-````
 2.	Abre el archivo index.html en tu navegador para visualizar la estructura inicial.
 3.	Explora y modifica el archivo style.css para observar cómo funcionan las propiedades de Grid.
 4.	Si necesitas ayuda o quieres comparar tu solución, cambia a la rama solution:
    ```git checkout solution```
 5. Agrega el script para que veas la magia de javascript!
-
-````
